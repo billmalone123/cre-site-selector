@@ -98,7 +98,7 @@ out center 50;
     const activities = (data.elements || [])
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .map((el: any) => transformElement(el))
-      .filter((a): a is Activity => a !== null)
+      .filter((a: Activity | null): a is Activity => a !== null)
       .filter((a: Activity) => {
         if (!query) return true
         const q = query.toLowerCase()
